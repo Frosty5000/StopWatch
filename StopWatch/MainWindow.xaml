@@ -1,0 +1,31 @@
+﻿<Window x:Class="StopWatch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StopWatch"
+        mc:Ignorable="d"
+        Title="Stopwatch App" Height="350" Width="525">
+    <Grid>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="517">
+            <MenuItem Header="Main" Height="28" Width="44">
+                <Grid Height="18" Width="75">
+                    <MenuItem Header="Stop" x:Name="menuStop" Click="menuStop_Click" Visibility="Hidden" Margin="-34,0,-59,0"/>
+                    <MenuItem Header="Start" x:Name="menuStart" Click="menuStart_Click" Visibility="Visible" Margin="-34,0,-59,0"/>
+                </Grid>
+                <MenuItem Header="Reset, Ctrl + R" x:Name="menuReset" Click="menuReset_Click"/>
+                <Grid>
+                <MenuItem Header="Pause" IsEnabled="False" x:Name="menuPause" Click="menuPause_Click" Margin="-34,0,32,0"/>
+                <MenuItem Header="Unpause" IsEnabled="True" Visibility="Hidden" x:Name="menuUnpause" Click="menuUnpause_Click" Margin="-34,0,32,0"/>
+                </Grid>
+                <MenuItem Header="Exit, Esc" x:Name="escExit" Click="escExit_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label x:Name="timer" BorderBrush="Black" BorderThickness="1" Content="00:00:00.00" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="95,100,86,135" Width="336" Height="84" FontSize="48" FontWeight="Bold" />
+        <Button x:Name="reset" Content="Reset" HorizontalAlignment="Center" VerticalAlignment="Center" Width="109" Margin="95,184,313,94" Height="41" FontSize="20" Click="reset_Click"/>
+        <Button x:Name="start" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" Width="115" Margin="204,184,198,94" Height="41" FontSize="20" Click="start_Click"/>
+        <Button x:Name="pause" Content="Pause" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Margin="319,184,86,94" Height="41" FontSize="20" IsEnabled="False" Click="pause_Click"/>
+        <Button x:Name="unpause" Content="Unpause" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Margin="319,184,86,94" Height="41" FontSize="20" Visibility="Hidden" Click="unpause_Click"/>
+        <Button x:Name="stop" Content="Stop" HorizontalAlignment="Center" VerticalAlignment="Center" Width="115" Margin="204,184,198,94" Height="41" FontSize="20" Visibility="Hidden" Click="stop_Click"/>
+    </Grid>
+</Window>
